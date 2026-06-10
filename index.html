@@ -16,6 +16,7 @@
         </div>
         <div class="btn" id="gameoption" onclick="gameoption()">Game Option</div>
         <div class="btn" id="flashcard" onclick="flashcardOnclick()">Learning Card</div>
+        <div class="btn" id="introduce_btn" onclick="introduceOnclick()">Introduce</div>
         <div class="btn" id="mario" onclick="marioOnclick()">Mario Hunter</div>
         <div class="btn" id="bubble" onclick="bubbleOnclick()">Bubble Click</div>
         <div class="btn" id="back" onclick="backOnclick()">Back</div>
@@ -26,8 +27,15 @@
                 <p id="linkgml">nguyenducanhtuan@gmail.com</p>
             </div>
         </div>
+        <div id="introduce_panel">
+            <button class="close_btn" onclick="closeIntroduce()">X</button>
+            <h2>About This Game</h2>
+            <p>Welcome to the ultimate Japanese Learning Game.</p>
+            <p>Awaken your ego and master Japanese through intense mini-games like Mario Hunter and Bubble Click!</p>
+        </div>
         </div>
         <img id="logobranch" src="./asset/logobranch.png"></img>
+        <img id="logo_hust" src="./asset/logo_hust.svg" alt="HUST Logo"></img>
     </div>
     <script>
         function showContact() {
@@ -44,6 +52,15 @@
             document.getElementById("back").style.display = "block";
             document.getElementById("flashcard").style.display = "none";
             document.getElementById("gameoption").style.display = "none";
+            document.getElementById("introduce_btn").style.display = "none";
+        }
+        function introduceOnclick(){
+            document.getElementById("introduce_panel").style.display = "block";
+        }
+        function closeIntroduce(){
+            document.getElementById("introduce_panel").style.display = "none";
+            clickAudio.currentTime = 0;
+            clickAudio.play();
         }
         function marioOnclick(){
             setTimeout(() => window.location.href = "indexMario.html", 300);
@@ -60,6 +77,7 @@
             document.getElementById("back").style.display = "none";
             document.getElementById("flashcard").style.display = "block";
             document.getElementById("gameoption").style.display = "block";
+            document.getElementById("introduce_btn").style.display = "block";
         }
 
         const clickAudio = new Audio('./asset/bluelock_click.wav');
