@@ -18,7 +18,6 @@
         <div class="btn" id="flashcard" onclick="flashcardOnclick()">Learning Card</div>
         <div class="btn" id="mario" onclick="marioOnclick()">Mario Hunter</div>
         <div class="btn" id="bubble" onclick="bubbleOnclick()">Bubble Click</div>
-        <div class="btn" id="game3" onclick="game3Onclick()">Typing Race</div>
         <div class="btn" id="back" onclick="backOnclick()">Back</div>
         <img id="wcball" src="./asset/wc2026_ball_transparent.png" onclick="showContact()"></img>
         <div id="contactwaifu">
@@ -42,7 +41,6 @@
         function gameoption(){
             document.getElementById("mario").style.display = "block";
             document.getElementById("bubble").style.display = "block";
-            document.getElementById("game3").style.display = "block";
             document.getElementById("back").style.display = "block";
             document.getElementById("flashcard").style.display = "none";
             document.getElementById("gameoption").style.display = "none";
@@ -56,13 +54,9 @@
         function flashcardOnclick(){
             setTimeout(() => window.location.href = "indexHiracard.html", 300);
         }
-        function game3Onclick(){
-            setTimeout(() => window.location.href = "https://motivatorsteam.itch.io/japanese-learning-game", 300);
-        }
         function backOnclick(){
             document.getElementById("mario").style.display = "none";
             document.getElementById("bubble").style.display = "none";
-            document.getElementById("game3").style.display = "none";
             document.getElementById("back").style.display = "none";
             document.getElementById("flashcard").style.display = "block";
             document.getElementById("gameoption").style.display = "block";
