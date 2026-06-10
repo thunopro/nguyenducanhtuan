@@ -16,32 +16,28 @@
         </div>
         <div class="btn" id="gameoption" onclick="gameoption()">Game Option</div>
         <div class="btn" id="flashcard" onclick="flashcardOnclick()">Learning Card</div>
-        <div class="btn" id="contact" onclick="contact()">Contact Us</div>   
         <div class="btn" id="mario" onclick="marioOnclick()">Mario Hunter</div>
         <div class="btn" id="bubble" onclick="bubbleOnclick()">Bubble Click</div>
         <div class="btn" id="game3" onclick="game3Onclick()">Typing Race</div>
         <div class="btn" id="back" onclick="backOnclick()">Back</div>
+        <img id="wcball" src="./asset/wc2026_ball_transparent.png" onclick="showContact()"></img>
         <div id="contactwaifu">
-            <i class="fa fa-facebook" id="contactwaifu_facebook" style="font-size:1.5vw;color:rgb(0, 0, 23)"></i>
-            <p id="linkfb">Motivators</p>
-            <i class="fa fa-envelope" id="contactwaifu_gmail" style="font-size:1.5vw;color:rgb(0, 0, 23)"></i>
-            <p id="linkgml">fu.motivators@gmail.com</p>
+            <div id="contact_container">
+                <i class="fa fa-envelope" id="contactwaifu_gmail" style="font-size:1.5vw;color:rgb(0, 0, 23)"></i>
+                <p id="linkgml">nguyenducanhtuan@gmail.com</p>
+            </div>
         </div>
         </div>
         <img id="logobranch" src="./asset/logobranch.png"></img>
     </div>
     <script>
-        var isplaysound = false;
-        function playSelectSound(){
-            if (isplaysound == false){
-                isplaysound = true;
-                var a = document.createElement("audio");
-                a.src = "./asset/menu_bg.mp3";
-                a.play();
-            }
-            a.onended = function(){
-                a.play()
-            }
+        function showContact() {
+            document.getElementById("contactwaifu").style.display = "block";
+            document.getElementById("wcball").style.display = "none";
+            
+            var audio = document.createElement("audio");
+            audio.src = "./asset/contactvoice.mp3";
+            audio.play();
         }
         function gameoption(){
             document.getElementById("mario").style.display = "block";
@@ -49,21 +45,19 @@
             document.getElementById("game3").style.display = "block";
             document.getElementById("back").style.display = "block";
             document.getElementById("flashcard").style.display = "none";
-            document.getElementById("contact").style.display = "none";
             document.getElementById("gameoption").style.display = "none";
-            document.getElementById("contactwaifu").style.display = "none";
         }
         function marioOnclick(){
-            window.location.href = "indexMario.html";
+            setTimeout(() => window.location.href = "indexMario.html", 300);
         }
         function bubbleOnclick(){
-            window.location.href = "indexBubble.html";
+            setTimeout(() => window.location.href = "indexBubble.html", 300);
         }
         function flashcardOnclick(){
-            window.location.href = "indexHiracard.html";
+            setTimeout(() => window.location.href = "indexHiracard.html", 300);
         }
         function game3Onclick(){
-            window.location.href = "https://motivatorsteam.itch.io/japanese-learning-game";
+            setTimeout(() => window.location.href = "https://motivatorsteam.itch.io/japanese-learning-game", 300);
         }
         function backOnclick(){
             document.getElementById("mario").style.display = "none";
@@ -71,15 +65,16 @@
             document.getElementById("game3").style.display = "none";
             document.getElementById("back").style.display = "none";
             document.getElementById("flashcard").style.display = "block";
-            document.getElementById("contact").style.display = "block";
             document.getElementById("gameoption").style.display = "block";
         }
-        function contact(){
-            document.getElementById("contactwaifu").style.display = "block";
-                var loli = document.createElement("audio");
-                loli.src = "./asset/contactvoice.mp3";
-                loli.play();
-        }
+
+        const clickAudio = new Audio('./asset/bluelock_click.wav');
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                clickAudio.currentTime = 0;
+                clickAudio.play();
+            });
+        });
     </script>
 </body>
 </html>

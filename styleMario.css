@@ -11,6 +11,7 @@
     z-index: 20;
     opacity: 0.75;
     border-radius: 30px;
+    mix-blend-mode: multiply;
 }
 #bg{
     position: absolute;

@@ -10,6 +10,7 @@ overflow: hidden;
     top: 92vh;
     z-index: 20;
     border-radius: 30px;
+    mix-blend-mode: multiply;
 }
 body {
     padding: 0;

@@ -1,23 +1,26 @@
-*{
+* {
     padding: 0;
     margin: 0;
     overflow: hidden;
 }
-#logobranch{
+
+#logobranch {
     position: absolute;
     width: 15vw;
     top: 27vh;
     left: 10.5vw;
+    mix-blend-mode: multiply;
 }
 
-#wrapper{
-    background-image: url("./asset/background.gif");
+#wrapper {
+    background-image: url("./asset/bluelock.jpg");
     position: absolute;
     height: 100vh;
     width: 100vw;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
 }
+
 .title {
     position: absolute;
     width: 100vw;
@@ -26,96 +29,120 @@
     margin-top: 17vh;
     margin-left: 7vw;
 }
+
 .title h1 {
     display: inline-block;
-    color: #000000;
+    color: #ffffff;
     font-size: 5.5vh;
     font-weight: bold;
     text-transform: uppercase;
     font-family: "fontmenu", sans-serif;
+    text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff, 0 0 40px #0000ff;
 }
 
 
-.btn{
-    margin: 3vh 0;
+.btn {
+    margin: 2vh 0;
     position: relative;
-    width: 20vw;
+    width: 25vw;
     height: 8vh;
     left: 50vw;
     transform: translateX(-50%);
     z-index: 10;
-    top: 30vh;
+    top: 25vh;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
     font-weight: bold;
     line-height: 8vh;
-    font-size: 5vh;
-    color: rgb(219, 24, 83);
-    cursor: pointer;
-}
-.btn:hover{
-    color: rgb(83, 21, 255);
     font-size: 4vh;
-    text-shadow: 2px 2px 4px #cb20ff;
+    color: #ffffff;
+    background: rgba(0, 15, 30, 0.85);
+    border: 2px solid #00e5ff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
+
+.btn:hover {
+    background: #00e5ff;
+    color: #000000;
+    font-size: 4vh;
+    box-shadow: 0 0 20px #00e5ff, 0 0 40px #00e5ff;
+    transform: translateX(-50%) scale(1.05);
+}
+
 @font-face {
     font-family: "fontmenu";
     src: url("./asset/fontmenu.ttf") format("truetype");
 }
 
-#mario{
-    display: none;
-}
-#bubble{
-    display: none;
-}
-#game3{
-    display: none;
-}
-#back{
+#mario {
     display: none;
 }
 
-#contactwaifu{
+#bubble {
+    display: none;
+}
+
+#game3 {
+    display: none;
+}
+
+#back {
+    display: none;
+}
+
+#contactwaifu {
     position: absolute;
-    background-image: url("./asset/contactus.png");
+    background-image: url("./asset/contactus_transparent.png");
     background-repeat: no-repeat;
     background-size: cover;
-    top: 47.5vh;
-    left: 65vw;
+    bottom: 0;
+    right: 0;
     width: 30vw;
     height: 55vh;
     display: none;
-    animation:  contactuswaifu 0.5s linear;
+    z-index: 10;
 }
-#contactwaifu_facebook{
-    position: inherit;
-    top: 25.5vh;
-    left: 7vw;
+
+#contact_container {
+    position: absolute;
+    top: 37vh;
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vw;
 }
-#contactwaifu_gmail{
-    position: inherit;
-    top: 32vh;
-    left: 6.75vw;
-}#linkfb{
-    position: inherit;
-    top: 25vh;
-    left: 9.5vw;
+
+#contactwaifu_gmail {
+    font-size: 1.5vw !important;
+}
+
+#linkgml {
     font-size: 1.5vw;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(0, 0, 23);
 }
-#linkgml{
-    position: inherit;
-    top: 31.5vh;
-    left: 9.5vw;
-    font-size: 1.5vw;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+
 @keyframes contactuswaifu {
-    0%{
+    0% {
         top: 97.5vh;
     }
-    100%{
+
+    100% {
         top: 47.5vh;
     }
+}
+
+#wcball {
+    position: absolute;
+    width: 12.5vw;
+    bottom: -4vh;
+    left: 42vw;
+    z-index: 20;
+    cursor: pointer;
 }
