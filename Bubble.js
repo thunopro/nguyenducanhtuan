@@ -58,6 +58,9 @@ var myGameArea = {
         document.getElementById("guide").style.display = "none";
         document.getElementById("quit").style.display = "none";
         document.getElementById("pausebutton").style.visibility = "hidden";
+        document.getElementById("leftHandle").style.display = "none";
+        document.getElementById("rightHandle").style.display = "none";
+        document.getElementById("realPauseBtn").style.display = "none";
         this.stop();
         bubaudio.pause();
         var e = document.createElement("audio");
@@ -134,6 +137,7 @@ function component(e) {
 }
 
 function updateGameArea() {
+    if (window.isPausedB) return;
     bubbletime++;
     document.getElementById("timecal").innerHTML = Math.floor(bubbletime / 50) + "s";
     myGameArea.clear();
@@ -158,6 +162,9 @@ function playbubble() {
     document.getElementById("tip").style.backgroundImage = "none";
     document.getElementById("pausebutton").style.visibility = "visible";
     document.getElementById("timecal").style.visibility = "visible";
+    document.getElementById("leftHandle").style.display = "block";
+    document.getElementById("rightHandle").style.display = "block";
+    document.getElementById("realPauseBtn").style.display = "block";
     bubaudio.src = "./assetBubble/bg_music.mp3";
     bubaudio.play();
     bubaudio.onended = function () {
@@ -188,6 +195,9 @@ function pausebubble() {
     document.getElementById("tip").style.backgroundImage = 'url("./assetBubble/bg_menu.gif")';
     document.getElementById("pausebutton").style.visibility = "hidden";
     document.getElementById("timecal").style.visibility = "hidden";
+    document.getElementById("leftHandle").style.display = "none";
+    document.getElementById("rightHandle").style.display = "none";
+    document.getElementById("realPauseBtn").style.display = "none";
     bubaudio.pause();
 }
 
@@ -206,3 +216,23 @@ function guide_to_menu() {
     document.querySelector(".buttonbubble").style.display = "block";
     document.getElementById("guidetableb").style.display = "none";
 }
+
+window.isPausedB = false;
+function togglePauseBubble() {
+    if (document.getElementById("menu").style.display !== "none") return;
+    
+    window.isPausedB = !window.isPausedB;
+    if (window.isPausedB) {
+        document.getElementById("pauseOverlayB").style.display = "block";
+        bubaudio.pause();
+    } else {
+        document.getElementById("pauseOverlayB").style.display = "none";
+        bubaudio.play().catch(e=>{});
+    }
+}
+
+document.addEventListener("keydown", function(e) {
+    if (e.key === "p" || e.key === "P" || e.key === "Escape") {
+        togglePauseBubble();
+    }
+});

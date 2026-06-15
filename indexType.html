@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <img id="logobranch" src="./asset/logobranch.png"></img>
+
     
     <div id="game_container">
         <div id="header">
             <button class="btn_type" onclick="quitGame()">Quit</button>
+            <button class="btn_type" onclick="openSettings()" style="margin-left: 2vw;">Speed</button>
             <div id="status_board">
                 <div class="status_item">SCORE: <span id="score">0</span></div>
                 <div class="status_item">LIVES: <span id="lives">3</span></div>
@@ -32,6 +33,16 @@
             <h2>Game Over</h2>
             <p>Score: <span id="final_score">0</span></p>
             <button class="btn_type" onclick="startGame()">Restart</button>
+        </div>
+
+        <!-- Settings Modal -->
+        <div id="settings_modal" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0, 15, 30, 0.95); border: 3px solid #00e5ff; padding: 4vh; border-radius: 15px; z-index: 200; text-align: center; box-shadow: 0 0 30px #00e5ff;">
+            <h2 style="color: #00e5ff; margin-bottom: 2vh; font-size: 5vh; text-transform: uppercase;">Settings</h2>
+            <div style="margin-bottom: 4vh;">
+                <label style="font-size: 3vh; font-weight: bold;">Initial Speed: <span id="speed_val">2.0</span></label><br>
+                <input type="range" id="speed_slider" min="0.5" max="5.0" step="0.5" value="2.0" style="width: 25vw; margin-top: 2vh;" oninput="updateSpeed()">
+            </div>
+            <button class="btn_type" onclick="closeSettings()">Apply</button>
         </div>
     </div>
 

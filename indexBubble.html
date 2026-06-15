@@ -5,7 +5,30 @@
 		<link rel="stylesheet" href="./asset/styleBubble.css">
 	</head>
 	<body>
-	<img id="logobranch" src="./asset/logobranch.png"></img>
+
+	
+    <div id="leftHandle" class="game-handle">
+        <div class="d-pad">
+            <div class="d-pad-btn up"></div>
+            <div class="d-pad-btn down"></div>
+            <div class="d-pad-btn left"></div>
+            <div class="d-pad-btn right"></div>
+            <div class="d-pad-center"></div>
+        </div>
+    </div>
+    <div id="rightHandle" class="game-handle right-side">
+        <div class="action-buttons">
+            <div class="action-btn x">X</div>
+            <div class="action-btn y">Y</div>
+            <div class="action-btn a">A</div>
+            <div class="action-btn b">B</div>
+        </div>
+    </div>
+
+    <div id="pauseOverlayB" style="display: none; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.6); z-index: 100; color: white; font-size: 15vh; text-align: center; line-height: 100vh; font-family: 'Lucida Sans', sans-serif; font-weight: bold; text-shadow: 0 0 20px #fff;">
+        PAUSED
+    </div>
+
 	<div id="onMobile">Set your pc screen in full size to play<br><br>
 		<img src="./assetBubble/troll.png" alt="#">
 	</div>
@@ -34,6 +57,7 @@
 	</div>
 	<div id="tip">Welcome to BubbleClick</div>
 	<button id="pausebutton">Quit</button>
+	<button id="realPauseBtn" onclick="togglePauseBubble()" style="display: none;">||</button>
 	<div id="timecal">0s</div>
 	<button id="playagain" class="buttonbubble" onclick="myGameArea.restart()">Play Again</button>
 	</body>

@@ -9,9 +9,13 @@
 </head>
 <body>
     <audio src="./assetMario/bg.mp3"></audio>
-    <img id="logobranch" src="./asset/logobranch.png"></img>
+
     <div id="restart" class="buttonmario" onclick="restart()">RESTART</div>
     <div id="menu" class="buttonmario" onclick="returnToMenu()">MENU</div>
+    <div id="pauseOverlay" style="display: none; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.6); z-index: 100; color: white; font-size: 15vh; text-align: center; line-height: 100vh; font-family: 'Lucida Sans', sans-serif; font-weight: bold; text-shadow: 0 0 20px #fff;">
+        PAUSED
+    </div>
+    <div id="pauseBtn" class="buttonmario" style="display: none; width: 6vw; height: 6vw; line-height: 6vw; top: 2vh; left: 2vw; z-index: 101; font-size: 3vw; border-radius: 50%; padding: 0; transform: none;" onclick="togglePause()">||</div>
     <div id="score">
         <div id="curscore"> SCORE: 0</div>
         <div id="time"> TIME LEFT: 90s</div>
@@ -119,6 +123,32 @@
         function returnToMenu(){
             window.location.href = ("index.html");
         }
+
+        window.isPaused = false;
+        function togglePause() {
+            // Only allow pause if game is running (ready button hidden and restart hidden)
+            if (document.querySelector("#ready").style.display !== "none" || document.querySelector("#restart").style.display === "block") return;
+            
+            window.isPaused = !window.isPaused;
+            if (window.isPaused) {
+                document.getElementById("pauseOverlay").style.display = "block";
+                document.getElementById("bg2").style.animationPlayState = "paused";
+                document.querySelectorAll(".kpEle").forEach(el => el.style.animationPlayState = "paused");
+                document.querySelector("audio").pause();
+            } else {
+                document.getElementById("pauseOverlay").style.display = "none";
+                document.getElementById("bg2").style.animationPlayState = "running";
+                document.querySelectorAll(".kpEle").forEach(el => el.style.animationPlayState = "running");
+                document.querySelector("audio").play().catch(e=>{});
+                document.querySelector("#input input").focus();
+            }
+        }
+        
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "p" || e.key === "P" || e.key === "Escape") {
+                togglePause();
+            }
+        });
     </script>
 </body>
 </html>

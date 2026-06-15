@@ -39,6 +39,7 @@ document.querySelector("#ready").addEventListener("click", ()=>{
     document.querySelector("#guide").style.display = "none";
     document.querySelector("#mario").style.display = "block";   
     document.querySelector("#input").style.display = "block";
+    document.querySelector("#pauseBtn").style.display = "block";
     playbgmusic();
     //tính điểm 
     let score = 0;
@@ -56,6 +57,9 @@ document.querySelector("#ready").addEventListener("click", ()=>{
     let isDisplayGun = false;
 
     let mainInterval = setInterval(()=>{
+        // If game is paused, do nothing this tick
+        if (window.isPaused) return;
+
         //vòng for tần số cao
         //mario chạy
         

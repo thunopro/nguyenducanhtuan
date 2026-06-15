@@ -22,38 +22,27 @@
         <div class="btn" id="match" onclick="matchOnclick()">Kana Match</div>
         <div class="btn" id="typing" onclick="typingOnclick()">Typing Race</div>
         <div class="btn" id="back" onclick="backOnclick()">Back</div>
-        <img id="wcball" src="./asset/wc2026_ball_transparent.png" onclick="showContact()"></img>
-        <div id="contactwaifu">
-            <div id="contact_container">
-                <i class="fa fa-envelope" id="contactwaifu_gmail" style="font-size:1.5vw;color:rgb(0, 0, 23)"></i>
-                <p id="linkgml">sixstarshust@gmail.com</p>
-            </div>
-        </div>
+
         <div id="introduce_panel" style="width: 55vw;">
             <button class="close_btn" onclick="closeIntroduce()">X</button>
             <h2 style="font-size: 4vh; color: #00e5ff; margin-bottom: 2vh; text-transform: uppercase;">Giới thiệu dự án</h2>
-            <p>Đây là sản phẩm tâm huyết được phát triển bởi <strong>Nhóm Sixstar</strong>.</p>
-            <p>Trang web ra đời với mục đích biến việc học bảng chữ cái tiếng Nhật (Hiragana và Katakana) trở nên cực kỳ thú vị, hấp dẫn và dễ nhớ hơn thông qua các trò chơi tương tác đa dạng:</p>
+            <p>Chúng mình - <strong>Sixstars Team</strong> xin giới thiệu đến toàn bộ các bạn đã, đang, và sẽ có nhu cầu học tiếng Nhật sản phẩm đầu tay của bọn mình - một tựa game hoàn toàn mới đậm chất Nhật Bản.</p>
+            <p>Trang web ra đời với mục đích biến việc học bảng chữ cái tiếng Nhật (Hiragana và Katakana) trở nên thú vị, hấp dẫn và dễ nhớ hơn thông qua các trò chơi tương tác đa dạng:</p>
             <p style="text-align: left; padding-left: 2vw; font-size: 2.3vh; line-height: 4.5vh;">
                 🎮 <strong>Learning Card:</strong> Nắm vững phát âm chuẩn và cách viết từng nét chữ.<br>
-                🍄 <strong>Mario Hunter & Bubble Click:</strong> Tăng cường khả năng phản xạ và nhận diện mặt chữ siêu tốc.<br>
-                🎴 <strong>Kana Match:</strong> Rèn luyện trí nhớ đỉnh cao thông qua trò chơi lật thẻ tìm cặp chữ.<br>
+                🍄 <strong>Mario Hunter & Bubble Click:</strong> Tăng cường khả năng phản xạ và nhận diện mặt chữ.<br>
+                🎴 <strong>Kana Match:</strong> Rèn luyện trí nhớ thông qua trò chơi lật thẻ tìm cặp chữ.<br>
                 ⌨️ <strong>Typing Race:</strong> Thử thách tốc độ gõ phím phiên âm Romaji dưới áp lực thời gian.
             </p>
-            <p style="margin-top: 2vh;">Mọi thắc mắc và góp ý, xin vui lòng liên hệ: <br><strong style="color: #ff0055;">sixstarshust@gmail.com</strong></p>
+            <p style="margin-top: 2vh;">Mọi thắc mắc và góp ý, xin vui lòng liên hệ với chúng mình tại: <br><strong style="color: #ff0055;">sixstarshust@gmail.com</strong></p>
         </div>
         </div>
-        <img id="logobranch" src="./asset/logobranch.png"></img>
+
         <img id="logo_hust" src="./asset/logo_hust.svg" alt="HUST Logo"></img>
     </div>
     <script>
         function showContact() {
-            document.getElementById("contactwaifu").style.display = "block";
-            document.getElementById("wcball").style.display = "none";
-            
-            var audio = document.createElement("audio");
-            audio.src = "./asset/contactvoice.mp3";
-            audio.play();
+            // Deprecated
         }
         function gameoption(){
             document.getElementById("mario").style.display = "block";
@@ -102,8 +91,9 @@
         const clickAudio = new Audio('./asset/bluelock_click.wav');
         document.querySelectorAll('.btn').forEach(btn => {
             btn.addEventListener('click', () => {
-                clickAudio.currentTime = 0;
-                clickAudio.play();
+                // Sound disabled as requested
+                // clickAudio.currentTime = 0;
+                // clickAudio.play();
             });
         });
     </script>

@@ -5,7 +5,9 @@ let lives = 3;
 let gameLoopInterval = null;
 let spawnInterval = null;
 let spawnRate = 2000;
+let baseFallSpeed = 2;
 let fallSpeed = 2;
+let isGamePaused = false;
 
 const clickAudio = new Audio('./asset/bluelock_click.wav');
 const errorAudio = new Audio('./assetMario/thua-cuoc.mp3'); // or any error sound
@@ -25,7 +27,7 @@ function startGame() {
     // Reset state
     score = 0;
     lives = 3;
-    fallSpeed = 2;
+    fallSpeed = baseFallSpeed;
     spawnRate = 2000;
     fallingWords = [];
     document.getElementById('score').innerText = score;
@@ -80,6 +82,8 @@ function spawnWord() {
 }
 
 function updateGameArea() {
+    if (isGamePaused) return;
+    
     const playArea = document.getElementById('play_area');
     const bottomLimit = playArea.clientHeight;
 
@@ -171,6 +175,26 @@ document.getElementById('type_input').addEventListener('input', function(e) {
 
 function quitGame() {
     window.location.href = "index.html";
+}
+
+// Settings functions
+function updateSpeed() {
+    baseFallSpeed = parseFloat(document.getElementById('speed_slider').value);
+    document.getElementById('speed_val').innerText = baseFallSpeed.toFixed(1);
+    fallSpeed = baseFallSpeed; // Apply immediately if playing
+}
+
+function openSettings() {
+    isGamePaused = true;
+    document.getElementById('settings_modal').style.display = 'block';
+}
+
+function closeSettings() {
+    document.getElementById('settings_modal').style.display = 'none';
+    if (lives > 0 && document.getElementById('game_over').style.display === 'none') {
+        isGamePaused = false;
+        document.getElementById('type_input').focus();
+    }
 }
 
 // Load data on start
