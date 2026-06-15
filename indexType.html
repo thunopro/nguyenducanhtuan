@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Race</title>
+    <link rel="icon" href="./asset/logo.jpg" type="jpg">
+    <link rel="stylesheet" href="./styleType.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <img id="logobranch" src="./asset/logobranch.png"></img>
+    
+    <div id="game_container">
+        <div id="header">
+            <button class="btn_type" onclick="quitGame()">Quit</button>
+            <div id="status_board">
+                <div class="status_item">SCORE: <span id="score">0</span></div>
+                <div class="status_item">LIVES: <span id="lives">3</span></div>
+            </div>
+        </div>
+
+        <div id="play_area">
+            <!-- Falling words will be generated here -->
+        </div>
+
+        <div id="input_area">
+            <input type="text" id="type_input" placeholder="Type Romaji here..." autocomplete="off" autofocus>
+        </div>
+        
+        <div id="game_over" style="display: none;">
+            <h2>Game Over</h2>
+            <p>Score: <span id="final_score">0</span></p>
+            <button class="btn_type" onclick="startGame()">Restart</button>
+        </div>
+    </div>
+
+    <script src="./type.js"></script>
+</body>
+</html>

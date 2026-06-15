@@ -95,6 +95,10 @@
     display: none;
 }
 
+#typing {
+    display: none;
+}
+
 #back {
     display: none;
 }

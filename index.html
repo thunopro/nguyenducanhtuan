@@ -21,6 +21,7 @@
         <div class="btn" id="bubble" onclick="bubbleOnclick()">Bubble Click</div>
         <div class="btn" id="match" onclick="matchOnclick()">Kana Match</div>
         <div class="btn" id="quiz" onclick="quizOnclick()">Kana Quiz</div>
+        <div class="btn" id="typing" onclick="typingOnclick()">Typing Race</div>
         <div class="btn" id="back" onclick="backOnclick()">Back</div>
         <img id="wcball" src="./asset/wc2026_ball_transparent.png" onclick="showContact()"></img>
         <div id="contactwaifu">
@@ -54,6 +55,7 @@
             document.getElementById("bubble").style.display = "block";
             document.getElementById("match").style.display = "block";
             document.getElementById("quiz").style.display = "block";
+            document.getElementById("typing").style.display = "block";
             document.getElementById("back").style.display = "block";
             document.getElementById("flashcard").style.display = "none";
             document.getElementById("gameoption").style.display = "none";
@@ -82,11 +84,15 @@
         function quizOnclick(){
             setTimeout(() => window.location.href = "indexQuiz.html", 300);
         }
+        function typingOnclick(){
+            setTimeout(() => window.location.href = "indexType.html", 300);
+        }
         function backOnclick(){
             document.getElementById("mario").style.display = "none";
             document.getElementById("bubble").style.display = "none";
             document.getElementById("match").style.display = "none";
             document.getElementById("quiz").style.display = "none";
+            document.getElementById("typing").style.display = "none";
             document.getElementById("back").style.display = "none";
             document.getElementById("flashcard").style.display = "block";
             document.getElementById("gameoption").style.display = "block";
