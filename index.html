@@ -20,22 +20,27 @@
         <div class="btn" id="mario" onclick="marioOnclick()">Mario Hunter</div>
         <div class="btn" id="bubble" onclick="bubbleOnclick()">Bubble Click</div>
         <div class="btn" id="match" onclick="matchOnclick()">Kana Match</div>
-        <div class="btn" id="quiz" onclick="quizOnclick()">Kana Quiz</div>
         <div class="btn" id="typing" onclick="typingOnclick()">Typing Race</div>
         <div class="btn" id="back" onclick="backOnclick()">Back</div>
         <img id="wcball" src="./asset/wc2026_ball_transparent.png" onclick="showContact()"></img>
         <div id="contactwaifu">
             <div id="contact_container">
                 <i class="fa fa-envelope" id="contactwaifu_gmail" style="font-size:1.5vw;color:rgb(0, 0, 23)"></i>
-                <p id="linkgml">nguyenducanhtuan@gmail.com</p>
+                <p id="linkgml">sixstarshust@gmail.com</p>
             </div>
         </div>
-        <div id="introduce_panel">
+        <div id="introduce_panel" style="width: 55vw;">
             <button class="close_btn" onclick="closeIntroduce()">X</button>
-            <h2>About This Game</h2>
-            <p>This is my product of group six star.</p>
-            <p>Welcome to the ultimate Japanese Learning Game.</p>
-            <p>Awaken your ego and master Japanese through intense mini-games like Mario Hunter and Bubble Click!</p>
+            <h2 style="font-size: 4vh; color: #00e5ff; margin-bottom: 2vh; text-transform: uppercase;">Giới thiệu dự án</h2>
+            <p>Đây là sản phẩm tâm huyết được phát triển bởi <strong>Nhóm Sixstar</strong>.</p>
+            <p>Trang web ra đời với mục đích biến việc học bảng chữ cái tiếng Nhật (Hiragana và Katakana) trở nên cực kỳ thú vị, hấp dẫn và dễ nhớ hơn thông qua các trò chơi tương tác đa dạng:</p>
+            <p style="text-align: left; padding-left: 2vw; font-size: 2.3vh; line-height: 4.5vh;">
+                🎮 <strong>Learning Card:</strong> Nắm vững phát âm chuẩn và cách viết từng nét chữ.<br>
+                🍄 <strong>Mario Hunter & Bubble Click:</strong> Tăng cường khả năng phản xạ và nhận diện mặt chữ siêu tốc.<br>
+                🎴 <strong>Kana Match:</strong> Rèn luyện trí nhớ đỉnh cao thông qua trò chơi lật thẻ tìm cặp chữ.<br>
+                ⌨️ <strong>Typing Race:</strong> Thử thách tốc độ gõ phím phiên âm Romaji dưới áp lực thời gian.
+            </p>
+            <p style="margin-top: 2vh;">Mọi thắc mắc và góp ý, xin vui lòng liên hệ: <br><strong style="color: #ff0055;">sixstarshust@gmail.com</strong></p>
         </div>
         </div>
         <img id="logobranch" src="./asset/logobranch.png"></img>
@@ -54,7 +59,6 @@
             document.getElementById("mario").style.display = "block";
             document.getElementById("bubble").style.display = "block";
             document.getElementById("match").style.display = "block";
-            document.getElementById("quiz").style.display = "block";
             document.getElementById("typing").style.display = "block";
             document.getElementById("back").style.display = "block";
             document.getElementById("flashcard").style.display = "none";
@@ -81,9 +85,6 @@
         function matchOnclick(){
             setTimeout(() => window.location.href = "indexMatch.html", 300);
         }
-        function quizOnclick(){
-            setTimeout(() => window.location.href = "indexQuiz.html", 300);
-        }
         function typingOnclick(){
             setTimeout(() => window.location.href = "indexType.html", 300);
         }
@@ -91,7 +92,6 @@
             document.getElementById("mario").style.display = "none";
             document.getElementById("bubble").style.display = "none";
             document.getElementById("match").style.display = "none";
-            document.getElementById("quiz").style.display = "none";
             document.getElementById("typing").style.display = "none";
             document.getElementById("back").style.display = "none";
             document.getElementById("flashcard").style.display = "block";
