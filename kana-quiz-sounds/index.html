@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Kuuube Kana Quiz Sounds</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>Kana Quiz Sounds</h1>
+        <div id="top-container">
+            <div class="flex-container">
+                <h2 id="start-button" class="fakebutton"><a>Start</a></h2>
+                <h2 id="reveal-button" class="fakebutton" hidden><a>Reveal</a></h2>
+                <audio controls id="kana-audio" hidden></audio>
+                <h2 id="skip-button" class="fakebutton" hidden><a>Skip</a></h2>
+            </div>
+            <br>
+            <div class="flex-container">
+                <span id="instructions">Click the character below that matches the audio</span>
+            </div>
+            <div class="score-container">
+                <span id="score">0/0</span>
+            </div>
+        </div>
+        <div id="bottom-container">
+            <div id="kana-tabs">
+                <h3><a id="hiragana-tab-selector" class="kana-tab-selector selected-tab fakebutton">Hiragana Mode</a></h3><h3><a id="katakana-tab-selector" class="kana-tab-selector fakebutton">Katakana Mode</a></h3>
+            </div>
+            <div id="hiragana-tab">
+                <h3>Hiragana <span class="checkall"><a id="hiragana-checkall">enable all</a> | <a id="hiragana-uncheckall">disable all</a></span></h3>
+                <div class="flex-container">
+                    <table id="hiragana-table">
+                        <tbody>
+                            <tr class="checkrow hiragana-check">
+                                <td><input type="checkbox" class="kanacheck" checked></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kana">あ</span></td>
+                                <td><span class="kana">か</span></td>
+                                <td><span class="kana">さ</span></td>
+                                <td><span class="kana">た</span></td>
+                                <td><span class="kana">な</span></td>
+                                <td><span class="kana">は</span></td>
+                                <td><span class="kana">ま</span></td>
+                                <td><span class="kana">や</span></td>
+                                <td><span class="kana">ら</span></td>
+                                <td><span class="kana">わ</span></td>
+                                <td></td>
+                                <td><span class="kana">が</span></td>
+                                <td><span class="kana">ざ</span></td>
+                                <td><span class="kana">だ</span></td>
+                                <td><span class="kana">ば</span></td>
+                                <td><span class="kana">ぱ</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kana">い</span></td>
+                                <td><span class="kana">き</span></td>
+                                <td><span class="kana">し</span></td>
+                                <td><span class="kana">ち</span></td>
+                                <td><span class="kana">に</span></td>
+                                <td><span class="kana">ひ</span></td>
+                                <td><span class="kana">み</span></td>
+                                <td></td>
+                                <td><span class="kana">り</span></td>
+                                <td></td>
+                                <td></td>
+                                <td><span class="kana">ぎ</span></td>
+                                <td><span class="kana">じ/ぢ</span></td>
+                                <td></td>
+                                <td><span class="kana">び</span></td>
+                                <td><span class="kana">ぴ</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kana">う</span></td>
+                                <td><span class="kana">く</span></td>
+                                <td><span class="kana">す</span></td>
+                                <td><span class="kana">つ</span></td>
+                                <td><span class="kana">ぬ</span></td>
+                                <td><span class="kana">ふ</span></td>
+                                <td><span class="kana">む</span></td>
+                                <td><span class="kana">ゆ</span></td>
+                                <td><span class="kana">る</span></td>
+                                <td></td>
+                                <td></td>
+                                <td><span class="kana">ぐ</span></td>
+                                <td><span class="kana">ず/づ</span></td>
+                                <td></td>
+                                <td><span class="kana">ぶ</span></td>
+                                <td><span class="kana">ぷ</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kana">え</span></td>
+                                <td><span class="kana">け</span></td>
+                                <td><span class="kana">せ</span></td>
+                                <td><span class="kana">て</span></td>
+                                <td><span class="kana">ね</span></td>
+                                <td><span class="kana">へ</span></td>
+                                <td><span class="kana">め</span></td>
+                                <td></td>
+                                <td><span class="kana">れ</span></td>
+                                <td></td>
+                                <td></td>
+                                <td><span class="kana">げ</span></td>
+                                <td><span class="kana">ぜ</span></td>
+                                <td><span class="kana">で</span></td>
+                                <td><span class="kana">べ</span></td>
+                                <td><span class="kana">ぺ</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kana">お</span></td>
+                                <td><span class="kana">こ</span></td>
+                                <td><span class="kana">そ</span></td>
+                                <td><span class="kana">と</span></td>
+                                <td><span class="kana">の</span></td>
+                                <td><span class="kana">ほ</span></td>
+                                <td><span class="kana">も</span></td>
+                                <td><span class="kana">よ</span></td>
+                                <td><span class="kana">ろ</span></td>
+                                <td><span class="kana">を</span></td>
+                                <td><span class="kana">ん</span></td>
+                                <td><span class="kana">ご</span></td>
+                                <td><span class="kana">ぞ</span></td>
+                                <td><span class="kana">ど</span></td>
+                                <td><span class="kana">ぼ</span></td>
+                                <td><span class="kana">ぽ</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Hiragana combinations <span class="checkall"><a id="hiragana-combinations-checkall">enable all</a> | <a id="hiragana-combinations-uncheckall">disable all</a></span></h3>
+                <div class="flex-container">
+                    <table id="hiragana-combinations-table">
+                        <tbody>
+                            <tr class="checkrow hiragana-combinations-check">
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kana">きゃ</span></td>
+                                <td><span class="kana">しゃ</span></td>
+                                <td><span class="kana">ちゃ</span></td>
+                                <td><span class="kana">にゃ</span></td>
+                                <td><span class="kana">ひゃ</span></td>
+                                <td><span class="kana">みゃ</span></td>
+                                <td><span class="kana">りゃ</span></td>
+                                <td><span class="kana">ぎゃ</span></td>
+                                <td><span class="kana">じゃ/ぢゃ</span></td>
+                                <td><span class="kana">びゃ</span></td>
+                                <td><span class="kana">ぴゃ</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kana">きゅ</span></td>
+                                <td><span class="kana">しゅ</span></td>
+                                <td><span class="kana">ちゅ</span></td>
+                                <td><span class="kana">にゅ</span></td>
+                                <td><span class="kana">ひゅ</span></td>
+                                <td><span class="kana">みゅ</span></td>
+                                <td><span class="kana">りゅ</span></td>
+                                <td><span class="kana">ぎゅ</span></td>
+                                <td><span class="kana">じゅ/ぢゅ</span></td>
+                                <td><span class="kana">びゅ</span></td>
+                                <td><span class="kana">ぴゅ</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kana">きょ</span></td>
+                                <td><span class="kana">しょ</span></td>
+                                <td><span class="kana">ちょ</span></td>
+                                <td><span class="kana">にょ</span></td>
+                                <td><span class="kana">ひょ</span></td>
+                                <td><span class="kana">みょ</span></td>
+                                <td><span class="kana">りょ</span></td>
+                                <td><span class="kana">ぎょ</span></td>
+                                <td><span class="kana">じょ/ぢょ</span></td>
+                                <td><span class="kana">びょ</span></td>
+                                <td><span class="kana">ぴょ</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="katakana-tab" hidden>
+                <h3>Katakana <span class="checkall"><a id="katakana-checkall">enable all</a> | <a id="katakana-uncheckall">disable all</a></span></h3>
+                <div class="flex-container">
+                    <table id="katakana-table">
+                        <tbody>
+                            <tr class="checkrow katakana-check">
+                                <td><input type="checkbox" class="kanacheck" checked></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kana">ア</span></td>
+                                <td><span class="kana">カ</span></td>
+                                <td><span class="kana">サ</span></td>
+                                <td><span class="kana">タ</span></td>
+                                <td><span class="kana">ナ</span></td>
+                                <td><span class="kana">ハ</span></td>
+                                <td><span class="kana">マ</span></td>
+                                <td><span class="kana">ヤ</span></td>
+                                <td><span class="kana">ラ</span></td>
+                                <td><span class="kana">ワ</span></td>
+                                <td></td>
+                                <td><span class="kana">ガ</span></td>
+                                <td><span class="kana">ザ</span></td>
+                                <td><span class="kana">ダ</span></td>
+                                <td><span class="kana">バ</span></td>
+                                <td><span class="kana">パ</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kana">イ</span></td>
+                                <td><span class="kana">キ</span></td>
+                                <td><span class="kana">シ</span></td>
+                                <td><span class="kana">チ</span></td>
+                                <td><span class="kana">ニ</span></td>
+                                <td><span class="kana">ヒ</span></td>
+                                <td><span class="kana">ミ</span></td>
+                                <td></td>
+                                <td><span class="kana">リ</span></td>
+                                <td></td>
+                                <td></td>
+                                <td><span class="kana">ギ</span></td>
+                                <td><span class="kana">ジ/ヂ</span></td>
+                                <td></td>
+                                <td><span class="kana">ビ</span></td>
+                                <td><span class="kana">ピ</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kana">ウ</span></td>
+                                <td><span class="kana">ク</span></td>
+                                <td><span class="kana">ス</span></td>
+                                <td><span class="kana">ツ</span></td>
+                                <td><span class="kana">ヌ</span></td>
+                                <td><span class="kana">フ</span></td>
+                                <td><span class="kana">ム</span></td>
+                                <td><span class="kana">ユ</span></td>
+                                <td><span class="kana">ル</span></td>
+                                <td></td>
+                                <td></td>
+                                <td><span class="kana">グ</span></td>
+                                <td><span class="kana">ズ/ヅ</span></td>
+                                <td></td>
+                                <td><span class="kana">ブ</span></td>
+                                <td><span class="kana">プ</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kana">エ</span></td>
+                                <td><span class="kana">ケ</span></td>
+                                <td><span class="kana">セ</span></td>
+                                <td><span class="kana">テ</span></td>
+                                <td><span class="kana">ネ</span></td>
+                                <td><span class="kana">ヘ</span></td>
+                                <td><span class="kana">メ</span></td>
+                                <td></td>
+                                <td><span class="kana">レ</span></td>
+                                <td></td>
+                                <td></td>
+                                <td><span class="kana">ゲ</span></td>
+                                <td><span class="kana">ゼ</span></td>
+                                <td><span class="kana">デ</span></td>
+                                <td><span class="kana">ベ</span></td>
+                                <td><span class="kana">ペ</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kana">オ</span></td>
+                                <td><span class="kana">コ</span></td>
+                                <td><span class="kana">ソ</span></td>
+                                <td><span class="kana">ト</span></td>
+                                <td><span class="kana">ノ</span></td>
+                                <td><span class="kana">ホ</span></td>
+                                <td><span class="kana">モ</span></td>
+                                <td><span class="kana">ヨ</span></td>
+                                <td><span class="kana">ロ</span></td>
+                                <td><span class="kana">ヲ</span></td>
+                                <td><span class="kana">ン</span></td>
+                                <td><span class="kana">ゴ</span></td>
+                                <td><span class="kana">ゾ</span></td>
+                                <td><span class="kana">ド</span></td>
+                                <td><span class="kana">ボ</span></td>
+                                <td><span class="kana">ポ</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Katakana combinations <span class="checkall"><a id="katakana-combinations-checkall">enable all</a> | <a id="katakana-combinations-uncheckall">disable all</a></span></h3>
+                <div class="flex-container">
+                    <table id="katakana-combinations-table">
+                        <tbody>
+                            <tr class="checkrow katakana-combinations-check">
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                                <td><input type="checkbox" class="kanacheck"></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kana">キャ</span></td>
+                                <td><span class="kana">シャ</span></td>
+                                <td><span class="kana">チャ</span></td>
+                                <td><span class="kana">ニャ</span></td>
+                                <td><span class="kana">ヒャ</span></td>
+                                <td><span class="kana">ミャ</span></td>
+                                <td><span class="kana">リャ</span></td>
+                                <td><span class="kana">ギャ</span></td>
+                                <td><span class="kana">ジャ/ヂャ</span></td>
+                                <td><span class="kana">ビャ</span></td>
+                                <td><span class="kana">ピャ</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kana">キュ</span></td>
+                                <td><span class="kana">シュ</span></td>
+                                <td><span class="kana">チュ</span></td>
+                                <td><span class="kana">ニュ</span></td>
+                                <td><span class="kana">ヒュ</span></td>
+                                <td><span class="kana">ミュ</span></td>
+                                <td><span class="kana">リュ</span></td>
+                                <td><span class="kana">ギュ</span></td>
+                                <td><span class="kana">ジュ/ヂュ</span></td>
+                                <td><span class="kana">ビュ</span></td>
+                                <td><span class="kana">ピュ</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="kana">キョ</span></td>
+                                <td><span class="kana">ショ</span></td>
+                                <td><span class="kana">チョ</span></td>
+                                <td><span class="kana">ニョ</span></td>
+                                <td><span class="kana">ヒョ</span></td>
+                                <td><span class="kana">ミョ</span></td>
+                                <td><span class="kana">リョ</span></td>
+                                <td><span class="kana">ギョ</span></td>
+                                <td><span class="kana">ジョ/ヂョ</span></td>
+                                <td><span class="kana">ビョ</span></td>
+                                <td><span class="kana">ピョ</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="options">
+            <h2>
+                <label class="collapse" for="show_options">Options <span class="checkall"><a>show/hide</a></span></label>
+            </h2>
+            <input id="show_options" type="checkbox" checked>
+            <div id="options_inner">
+                <h3>Speakers</h3>
+                <div class="flex-container">
+                    <span>
+                        <input type="checkbox" id="speaker-0" class="speaker-checkbox" data-speaker-number="0" checked><label for="speaker-0">1 (Female)</label>
+                        <a class="speaker-button" data-speaker-number="0"></a>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="speaker-1" class="speaker-checkbox" data-speaker-number="1" checked><label for="speaker-1">1 (Male)</label>
+                        <a class="speaker-button" data-speaker-number="1"></a>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="speaker-2" class="speaker-checkbox" data-speaker-number="2" checked><label for="speaker-2">3 (Female)</label>
+                        <a class="speaker-button" data-speaker-number="2"></a>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="speaker-3" class="speaker-checkbox" data-speaker-number="3" checked><label for="speaker-3">4 (Female)</label>
+                        <a class="speaker-button" data-speaker-number="3"></a>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="speaker-4" class="speaker-checkbox" data-speaker-number="4" checked><label for="speaker-4">5 (Male)</label>
+                        <a class="speaker-button" data-speaker-number="4"></a>
+                    </span>
+                </div>
+                <h3>Misc</h3>
+                <div>
+                    <input type="checkbox" id="persistent-highlights"><label for="persistent-highlights">Persistent Answer Highlights</label>
+                </div>
+                <h3>Actions</h3>
+                <div class="flex-container">
+                    <h2 class="fakebutton" id="shuffle-kana"><a>Shuffle Kana Positions</a></h2>
+                    <h2 class="fakebutton" id="revert-kana"><a>Revert Kana Positions</a></h2>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="main.js"></script>
+    </body>
+</html>
