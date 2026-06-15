@@ -92,9 +92,21 @@ function component(e) {
     var self = this;
     this.image.onload = function() {
         var oCtx = self.cachedCanvas.getContext("2d");
-        // Use saturate and brightness to make it extra vibrant!
-        oCtx.filter = 'hue-rotate(' + self.hue + 'deg) saturate(300%) brightness(130%)';
+        
+        // Create a vibrant radial gradient to fill the bubble
+        var gradient = oCtx.createRadialGradient(25, 25, 5, 32.5, 32.5, 30);
+        gradient.addColorStop(0, 'hsla(' + self.hue + ', 100%, 80%, 0.9)');
+        gradient.addColorStop(1, 'hsla(' + self.hue + ', 100%, 50%, 0.5)');
+        
+        // Draw the colored circle background
+        oCtx.fillStyle = gradient;
+        oCtx.beginPath();
+        oCtx.arc(32.5, 32.5, 28, 0, Math.PI * 2);
+        oCtx.fill();
+        
+        // Draw the original grayscale image on top
         oCtx.drawImage(self.image, 0, 0, self.width, self.height);
+        
         self.isCached = true;
     };
     
