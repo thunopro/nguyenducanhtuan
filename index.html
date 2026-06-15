@@ -19,6 +19,8 @@
         <div class="btn" id="introduce_btn" onclick="introduceOnclick()">Introduce</div>
         <div class="btn" id="mario" onclick="marioOnclick()">Mario Hunter</div>
         <div class="btn" id="bubble" onclick="bubbleOnclick()">Bubble Click</div>
+        <div class="btn" id="match" onclick="matchOnclick()">Kana Match</div>
+        <div class="btn" id="quiz" onclick="quizOnclick()">Kana Quiz</div>
         <div class="btn" id="back" onclick="backOnclick()">Back</div>
         <img id="wcball" src="./asset/wc2026_ball_transparent.png" onclick="showContact()"></img>
         <div id="contactwaifu">
@@ -30,6 +32,7 @@
         <div id="introduce_panel">
             <button class="close_btn" onclick="closeIntroduce()">X</button>
             <h2>About This Game</h2>
+            <p>This is my product of group six star.</p>
             <p>Welcome to the ultimate Japanese Learning Game.</p>
             <p>Awaken your ego and master Japanese through intense mini-games like Mario Hunter and Bubble Click!</p>
         </div>
@@ -49,6 +52,8 @@
         function gameoption(){
             document.getElementById("mario").style.display = "block";
             document.getElementById("bubble").style.display = "block";
+            document.getElementById("match").style.display = "block";
+            document.getElementById("quiz").style.display = "block";
             document.getElementById("back").style.display = "block";
             document.getElementById("flashcard").style.display = "none";
             document.getElementById("gameoption").style.display = "none";
@@ -71,9 +76,17 @@
         function flashcardOnclick(){
             setTimeout(() => window.location.href = "indexHiracard.html", 300);
         }
+        function matchOnclick(){
+            setTimeout(() => window.location.href = "indexMatch.html", 300);
+        }
+        function quizOnclick(){
+            setTimeout(() => window.location.href = "indexQuiz.html", 300);
+        }
         function backOnclick(){
             document.getElementById("mario").style.display = "none";
             document.getElementById("bubble").style.display = "none";
+            document.getElementById("match").style.display = "none";
+            document.getElementById("quiz").style.display = "none";
             document.getElementById("back").style.display = "none";
             document.getElementById("flashcard").style.display = "block";
             document.getElementById("gameoption").style.display = "block";

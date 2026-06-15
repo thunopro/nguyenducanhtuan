@@ -13,7 +13,7 @@ document.getElementById("mario").style.left = a.left;
 document.querySelector("#mario").style.display = "none";
 document.querySelector("#input").style.display = "none";
 document.querySelector("#restart").style.display = "none";
-document.querySelector("#menu").style.display = "none";
+// Menu button stays visible so user can go back before starting
 
 document.querySelector("#settingtable button").onclick = back_to_ready;
 document.querySelector("#guidetable button").onclick = guide_to_ready;
@@ -33,6 +33,7 @@ function guide_to_ready(){
 }
 document.querySelector("#ready").addEventListener("click", ()=>{
     document.querySelector("#ready").style.display = "none";
+    document.querySelector("#menu").style.display = "none";
     document.querySelector("#score").style.visibility = "visible";
     document.querySelector("#setting").style.display = "none";
     document.querySelector("#guide").style.display = "none";
